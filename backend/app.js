@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import createorder from './routes/createorder.js';
 import admin from './routes/admin.js';
 import status from './routes/status.js';
+import currentorder from './routes/currentorder.js'
 const router = express.Router();
 
 // import cookieParser from 'cookie-parser';
@@ -20,6 +21,7 @@ app.use(cors({
 //using middlewares 
 //to take value from the body
 app.use(express.json());
+app.use('/api/v1', currentorder);
 app.use('/api/v1', createorder);
 app.use('/api/v1', admin);
 app.use('/api/v1', status);
