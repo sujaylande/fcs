@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from "react"
 import StatusCard from '../componets/StatusCard'
+import Header from "../componets/Header";
 import axios from "axios";
+import {Link} from 'react-router-dom';
 const Home = () => {
     const [orderStatus, setOrderStatus] = useState("");
     const [orderNo, setOrderNo] = useState("");
@@ -29,10 +31,7 @@ const Home = () => {
     }
   return (
     <>
-      <div className="flex justify-between items-center bg-gray-400 py-3 px-5">
-        <h1 className="text-[#fff] capitalize text-xl font-bold">NITK - Food Court</h1>
-        <button className="px-2 py-1 bg-black text-[#fff] rounded-md shadow-lg text-sm uppercase font-medium">Admin Login</button>
-      </div>
+      <Header />
       <div className="flex justify-center items-center w-full h-full">
         <div className="flex justify-center items-center flex-col py-5">
           <label htmlFor="price" className="block text-sm font-medium leading-6 text-gray-900 text-xl py-2">Enter your Order No</label>
