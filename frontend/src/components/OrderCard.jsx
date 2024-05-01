@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../util";
 import axios from "axios";
 import { useMyContext } from "../Context/MyContext";
-import { useToasts } from "react-toast-notifications";
+import { useToasts } from 'react-toast-notifications';
 
 const OrderCard = ({ type }) => {
   const [token, setToken] = useState("");
-  const { myVariable, setMyVariable } = useMyContext();
+  const { myVariable, setMyVariable} = useMyContext();
   const { addToast } = useToasts();
 
   const handleInputChange = (e) => {
@@ -21,12 +21,10 @@ const OrderCard = ({ type }) => {
       console.log(response);
       setToken("");
       setMyVariable("n");
-      addToast(response.data.message, { appearance: "success" });
+      addToast(response.data.message, { appearance: 'success' });
     } catch (error) {
       console.log(error);
-      addToast("An error occurred while creating the new order", {
-        appearance: "error",
-      });
+      addToast('An error occurred while creating the new order', { appearance: 'error' });
     }
   };
 
@@ -38,12 +36,10 @@ const OrderCard = ({ type }) => {
       console.log(response);
       setToken("");
       setMyVariable("r");
-      addToast(response.data.message, { appearance: "success" });
+      addToast(response.data.message, { appearance: 'success' });
     } catch (error) {
       console.log(error);
-      addToast("An error occurred while creating the ready order", {
-        appearance: "error",
-      });
+      addToast('An error occurred while creating the ready order', { appearance: 'error' });
     }
   };
 
@@ -55,12 +51,10 @@ const OrderCard = ({ type }) => {
       setToken("");
       setMyVariable("d");
       console.log(response);
-      addToast(response.data.message, { appearance: "success" });
+      addToast(response.data.message, { appearance: 'success' });
     } catch (error) {
       console.log(error);
-      addToast("An error occurred while delivering the order", {
-        appearance: "error",
-      });
+      addToast('An error occurred while delivering the order', { appearance: 'error' });
     }
   };
 
