@@ -2,13 +2,16 @@ import axios from "axios";
 import React, {useState} from "react";
 import Cookies from 'js-cookie';
 import {useNavigate} from "react-router-dom";
+import { BASE_URL } from "../../util";
+
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  
+
   const handleSubmit = async (e) =>{
+    
     setMessage("");
     e.preventDefault();
     const userData = {
@@ -18,7 +21,7 @@ const AdminLogin = () => {
     console.log(userData);
 
     try{
-      const response = await axios.post('http://localhost:4000/api/v1/login', userData);
+      const response = await axios.post(BASE_URL+'api/v1/login', userData);
 
       if(response.status === 200){
         const responseEmail = response.data.email;

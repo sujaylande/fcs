@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react"
-import StatusCard from '../componets/StatusCard'
-import Header from "../componets/Header";
+import StatusCard from '../components/StatusCard'
+import Header from "../components/Header";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 const Home = () => {
