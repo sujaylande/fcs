@@ -2,7 +2,7 @@ import { Order } from '../models/order.js';
 
 // Function to add token to waiting array
 export const addToWaiting = async (req, res) => {
-  console.log(req.body)
+  //console.log(req.body)
   const { token } = req.body;
   try {
     // Check if token already exists in any status
