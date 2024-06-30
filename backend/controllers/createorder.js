@@ -4,7 +4,8 @@ import { Order } from '../models/order.js';
 export const addToWaiting = async (req, res) => {
   //console.log(req.body)
   const { token } = req.body;
-  try {
+  try {   
+
     // Check if token already exists in any status
     const existingOrder = await Order.findOne({ token });
     if (existingOrder) {

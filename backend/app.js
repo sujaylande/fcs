@@ -30,7 +30,7 @@ app.use('/api/v1', createorder);
 app.use('/api/v1', admin);
 app.use('/api/v1', status);
 
-cron.schedule('15 00 * * *', async () => {
+cron.schedule('17 20 * * *', async () => {
     try {
       await mongoose.connection.db.dropCollection('orders');
       console.log('Order collection dropped successfully!');

@@ -5,6 +5,7 @@ export const moveFromReadyToDelivered = async (req, res) => {
   const { token } = req.body;
 
   try {
+    
     // Find the order in ready status
     const order = await Order.findOneAndUpdate({ token, status: 'ready' }, { status: 'delivered' });
     if (!order) {

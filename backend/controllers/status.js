@@ -5,6 +5,7 @@ import { Order } from '../models/order.js';
 export const checkOrderStatus = async (req, res) => {
   const { token } = req.body;
   try {
+    
     // Find the order and return its status
     const order = await Order.findOne({ token });
     if (!order) {

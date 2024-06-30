@@ -5,6 +5,7 @@ export const moveFromWaitingToReady = async (req, res) => {
   const { token } = req.body;
 
   try {
+    
     // Find the order in waiting status
     const order = await Order.findOneAndUpdate({ token, status: 'waiting' }, { status: 'ready' });
     if (!order) {

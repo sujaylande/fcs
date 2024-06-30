@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema({
   token: {
-    type: String,
+    type: Number,
+    min :1,
     required: true,
     unique: true,
   },
